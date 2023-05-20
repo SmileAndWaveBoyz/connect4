@@ -4,8 +4,8 @@ import "./normalise.css";
 import './App.css';
 
 import Home from './components/Home';
-
-
+import Player from './components/Player';
+import Rules from './components/Rules';
 
 function App() {
   const [pageName, setPageName] = useState("/");
@@ -19,8 +19,8 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/2player'/>
-        <Route path='/rules'/>
+        <Route path='/2player' element={<Player/>}/>
+        <Route path='/rules'element={<Rules/>}/>
       </Routes>
 
     </>

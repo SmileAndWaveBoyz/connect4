@@ -11,11 +11,13 @@ html{
   --secondary: rgb(121, 69, 255);
   --player1: rgb(253 , 102, 135);
   --player2: rgb(255 , 206, 103);
+  --outlineHover: #4aa5e2;
 }
 
 body{
   background-color: var(--primary);
   font-family: 'Space Grotesk', sans-serif;
+  font-style: normal;
 }
 
 .buttonsContainer{
@@ -66,5 +68,116 @@ body{
 }
 
 .mainMenuButtons:hover{
-  box-shadow: 0px 7px 0px 4px #4aa5e2;
+  box-shadow: 0px 7px 0px 4px var(--outlineHover);
+}
+
+h1{
+  font-weight: 700;
+  font-size: 5.6rem;
+  line-height: 71px;
+}
+
+h2{
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Rules Page  */
+.rulesPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rulesContainer{
+  margin: 97px 20px;
+  height: 58.6rem;
+  width: 33.5rem;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 43px;
+  box-shadow: 0px 8px 0px 0px;
+  position: relative;
+}
+
+.rulesHeading{
+  text-align: center;
+  margin-bottom: 2.9rem;
+}
+
+.textContainer{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.rulesContainer .textContainer h2{
+  font-size: 2rem;
+  line-height: 26px;
+  color: #7945FF;
+  margin-bottom: 1.6rem;
+}
+
+.rulesContainer .textContainer p, .rulesContainer .textContainer ol li{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 20px;
+  opacity: 0.66;
+}
+
+.rulesContainer .textContainer p{
+  margin-bottom: 3.3rem;
+}
+
+.rulesContainer .textContainer ol li{
+  margin-bottom: 1rem;
+}
+
+.rulesContainer .textContainer ol{
+  margin-left: 1.65rem;
+}
+
+.rulesTickButton{
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 100%;
+  height: 64px;
+  width: 64px;
+  outline: 1px solid black;
+  border: 1px solid black;
+  box-shadow: 0px 2px 0px 4px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.rulesTickButton:hover{
+  outline: 1px solid var(--outlineHover);
+  border: 1px solid var(--outlineHover);
+  box-shadow: 0px 2px 0px 4px var(--outlineHover);
+}
+
+.rulesTickButton img{
+  transform: translateY(2px);
+}
+
+@media screen and (min-width: 768px) {
+  .rulesContainer{
+    width: 48rem;
+    height: 56.9rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (min-height: 800px) {
+  .rulesContainer{
+    margin-top: 228px;
+  }
+}
+
+@media screen and (min-width: 1280px){
+  .rulesContainer{
+    margin-top: 182px;
+  }
 }
