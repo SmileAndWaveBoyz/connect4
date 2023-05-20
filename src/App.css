@@ -15,7 +15,7 @@ html{
 }
 
 body{
-  background-color: var(--primary);
+  background-color: var(--secondary);
   font-family: 'Space Grotesk', sans-serif;
   font-style: normal;
 }
@@ -180,4 +180,161 @@ h2{
   .rulesContainer{
     margin-top: 182px;
   }
+}
+
+/* Play page  */
+.playArea{
+  margin: 0 2rem;
+}
+
+.playButtonsContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5rem 0;
+}
+
+.playScreenLogo{
+  width: 40px;
+  height: 40px;
+}
+
+.gameButton{
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: center;
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+  color: #FFFFFF;
+  outline: 0;
+  border: 0;
+  padding: 1rem 3.1rem;
+  background: #5C2DD5;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.gameButton:hover{
+  background: var(--player1);
+}
+
+.playersBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.playersTextBubble{
+  background-color: white;
+  border: 3px solid #000000;
+  box-shadow: 0px 10px 0px #000000;
+  border-radius: 20px;
+  width: 14.2rem;
+  height: 8.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 14.2rem;
+  position: relative;
+}
+
+.playersTextBubble h2{
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.playersTextBubble p{
+  font-size: 3.2rem;
+  line-height: 4.1rem;
+}
+
+.playersTextBubble img{
+  position: absolute;
+}
+
+.playerOneImage{
+  left: -2.5rem;
+}
+
+.playerTwoImage{
+  right: -2.5rem;
+}
+
+.gameBoard{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 23.1rem;
+}
+
+.backImageLayer, .frontImageLayer{
+  position: absolute;
+}
+
+.backImageLayer{
+  z-index: 1;
+}
+
+.frontImageLayer{
+  background-image: url("../public/assets/images/board-layer-white-small.svg");
+  z-index: 3;
+  width: 335px;
+  height: 310px;
+  position: relative;
+}
+
+.gameBoard table{
+  z-index: 2;
+  position: absolute;
+  width: 328px;
+  height: 286px;
+}
+
+.gameBoard table tr td{
+  text-align: center;
+  position: relative;
+}
+
+.gameBoard table tr td img{
+  margin: 0 auto;
+  position: absolute;
+  left: 5px;
+  top: 3px
+}
+
+.playerTurnBox{
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -150px;
+  background-image: url("../public/assets/images/turn-background-red.svg");
+  width: 197px;
+  height: 166px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerTurnBox h3{
+  display: block;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.playerTurnBox p{
+  display: block;
+  font-weight: 700;
+  font-size: 5.6rem;
+  line-height: 7.1rem;
 }
