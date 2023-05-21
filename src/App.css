@@ -21,7 +21,6 @@ body{
 }
 
 .buttonsContainer{
-  /* outline: 1px solid wheat; */
   width: 335px;
   height: 305px;
   margin: 0 auto;
@@ -273,6 +272,11 @@ h2{
   display: flex;
   justify-content: center;
   margin-bottom: 23.1rem;
+  
+}
+
+.tableContainer{
+  outline: 1px solid wheat;
 }
 
 .backImageLayer, .frontImageLayer{
@@ -288,7 +292,8 @@ h2{
   position: relative;
 }
 
-.gameBoard table{
+
+.gameTable{
   top: 0px;
   z-index: 2;
   position: absolute;
@@ -301,11 +306,33 @@ h2{
   position: relative;
 }
 
+.invisibleEventListener{
+  width: 328px;
+  height: 80px;
+  top: -22px;
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  outline: 0;
+}
+
+.invisibleEventListener tr td{
+  /* border: 1px solid rgb(43, 42, 40); */
+}
+
 .token{
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+.token.red{
+  content: url("/public/assets/images/counter-red-small.svg");
+}
+
+.token.yellow{
+  content: url("/public/assets/images/counter-yellow-small.svg");
 }
 
 .playerTurnBox{
@@ -314,7 +341,6 @@ h2{
   left: 50%;
   transform: translateX(-50%);
   bottom: -150px;
-  background-image: url("../public/assets/images/turn-background-red.svg");
   width: 197px;
   height: 166px;
   text-align: center;
@@ -323,6 +349,15 @@ h2{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s;
+}
+
+.playerTurnBox.red{
+  background-image: url("../public/assets/images/turn-background-red.svg");
+}
+
+.playerTurnBox.yellow{
+  background-image: url("../public/assets/images/turn-background-yellow.svg");
 }
 
 .playerTurnBox h3{
@@ -339,6 +374,10 @@ h2{
   line-height: 7.1rem;
 }
 
+.markerImage{
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .backImageLayer{
     content: url("/public/assets/images/board-layer-black-large.svg");
@@ -348,14 +387,26 @@ h2{
     content: url("/public/assets/images/board-layer-white-large.svg");
   }
 
-  .gameBoard table{
+  .gameTable{
     width: 619px;
     height: 530px;
     top: 10px;
   }
+
+  .invisibleEventListener{
+    top: -30px;
+    transform: translate(-23px);
+    position: absolute;
+    width: 672px;
+    height: 140px;
+  }
   
   .token.red{
     content: url("/public/assets/images/counter-red-large.svg");
+  }
+
+  .token.yellow{
+    content: url("/public/assets/images/counter-yellow-large.svg");
   }
 
 }
@@ -403,4 +454,21 @@ h2{
   .playersBox{
     width: 100rem;
   }
+
+  .markerImage{
+    display: block;
+    position: absolute;
+    top: -5px;
+    z-index: 5;
+    transition: all 0.15s;
+  }
+
+  .markerImage.red{
+    content: url("/public/assets/images/marker-red.svg");
+  }
+  
+  .markerImage.yellow{
+    content: url("/public/assets/images/marker-yellow.svg");
+  }
+
  }
