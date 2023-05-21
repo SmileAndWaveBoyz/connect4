@@ -185,6 +185,7 @@ h2{
 /* Play page  */
 .playArea{
   margin: 0 2rem;
+  position: relative;
 }
 
 .playButtonsContainer{
@@ -192,7 +193,7 @@ h2{
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 5rem 0;
+  margin: 5rem auto;
 }
 
 .playScreenLogo{
@@ -225,6 +226,7 @@ h2{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin: 0 auto;
   margin-bottom: 5rem;
 }
 
@@ -282,14 +284,12 @@ h2{
 }
 
 .frontImageLayer{
-  background-image: url("../public/assets/images/board-layer-white-small.svg");
   z-index: 3;
-  width: 335px;
-  height: 310px;
   position: relative;
 }
 
 .gameBoard table{
+  top: 0px;
   z-index: 2;
   position: absolute;
   width: 328px;
@@ -301,11 +301,11 @@ h2{
   position: relative;
 }
 
-.gameBoard table tr td img{
-  margin: 0 auto;
+.token{
   position: absolute;
-  left: 5px;
-  top: 3px
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .playerTurnBox{
@@ -338,3 +338,69 @@ h2{
   font-size: 5.6rem;
   line-height: 7.1rem;
 }
+
+@media screen and (min-width: 768px) {
+  .backImageLayer{
+    content: url("/public/assets/images/board-layer-black-large.svg");
+  }
+  
+  .frontImageLayer{
+    content: url("/public/assets/images/board-layer-white-large.svg");
+  }
+
+  .gameBoard table{
+    width: 619px;
+    height: 530px;
+    top: 10px;
+  }
+  
+  .token.red{
+    content: url("/public/assets/images/counter-red-large.svg");
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+ .playButtonsContainer{
+  width: 63.2rem;
+  height: 5.2rem;
+ }
+
+ .playersTextBubble{
+  height: 18.7rem;
+  width: 14.1rem;
+ }
+
+ .playerOneImage, .playerTwoImage{
+  top: -28px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+ }
+
+ .playersBox{
+  width: 95rem;
+  justify-content: space-between;
+  position: absolute;
+  top: 56%;
+  right: 50%;
+  transform: translate(50%, -50%);
+ }
+
+ .playersTextBubble h2{
+  font-size: 2rem;
+  line-height: 2.6rem;
+ }
+ 
+ .playersTextBubble p{
+  font-weight: 700;
+  font-size: 5.6rem;
+  line-height: 7.1rem;
+ }
+
+}
+
+@media screen and (min-width: 1280px) {
+  .playersBox{
+    width: 100rem;
+  }
+ }

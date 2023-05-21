@@ -23,28 +23,19 @@ function Player() {
       </div>
 
       <div className="gameBoard">
-        <img className='backImageLayer' src="/assets/images/board-layer-black-small.svg" alt="" />
+        <img className='backImageLayer' src="/assets/images/board-layer-black-small.svg" alt="back of connect 4 board" />
         <table>
           <tr>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
           </tr>
           <tr>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
             <td></td>
             <td></td>
             <td></td>
@@ -53,7 +44,7 @@ function Player() {
             <td></td>
           </tr>
           <tr>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
             <td></td>
             <td></td>
             <td></td>
@@ -62,7 +53,7 @@ function Player() {
             <td></td>
           </tr>
           <tr>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
             <td></td>
             <td></td>
             <td></td>
@@ -71,7 +62,16 @@ function Player() {
             <td></td>
           </tr>
           <tr>
-            <td><img src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><img className="token red" src="/assets/images/counter-red-small.svg" alt="" /></td>
             <td></td>
             <td></td>
             <td></td>
@@ -80,12 +80,12 @@ function Player() {
             <td></td>
           </tr>
         </table>
-        <div className="frontImageLayer"></div>
+        <img className="frontImageLayer" src="/assets/images/board-layer-white-small.svg" alt="Front of connect 4 board"/>
         
         <div className="playerTurnBox">
             <h3>PLAYER 1'S TURN</h3>
             <p>15s</p>
-          </div>
+        </div>
       </div>
     </div>
   )
