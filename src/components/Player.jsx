@@ -3,13 +3,13 @@ import {Route, Routes, useLocation } from 'react-router-dom';
 
 function Player() {
   //Table logic
-  const[column0, setcolumn0] = useState([0, 0, 0, 0, 0, 0]);
-  const[column1, setcolumn1] = useState([2, 0, 0, 0, 0, 0]);
-  const[column2, setcolumn2] = useState([2, 0, 0, 0, 0, 0]);
-  const[column3, setcolumn3] = useState([2, 0, 0, 0, 0, 0]);
-  const[column4, setcolumn4] = useState([2, 0, 0, 0, 0, 0]);
-  const[column5, setcolumn5] = useState([2, 0, 0, 0, 0, 0]);
-  const[column6, setcolumn6] = useState([1, 0, 0, 0, 0, 0]);
+  const[column0, setcolumn0] = useState([0, 0, 0, 1, 2, 1]);
+  const[column1, setcolumn1] = useState([0, 0, 0, 0, 0, 1]);
+  const[column2, setcolumn2] = useState([0, 0, 0, 0, 0, 0]);
+  const[column3, setcolumn3] = useState([0, 0, 0, 0, 0, 0]);
+  const[column4, setcolumn4] = useState([0, 0, 0, 0, 0, 0]);
+  const[column5, setcolumn5] = useState([0, 0, 0, 0, 0, 0]);
+  const[column6, setcolumn6] = useState([0, 0, 0, 0, 0, 0]);
   const[wholeTable, setWholeTable] = useState([column0, column1, column2, column3, column4, column5, column6]);
 
   //Set who's turn it is and the timer
@@ -69,107 +69,94 @@ function Player() {
         <img className='backImageLayer' src="/assets/images/board-layer-black-small.svg" alt="back of connect 4 board" />
         <table className='gameTable'>
           <tr>
-            <td>{
-            wholeTable[0][0] === 0 ? 
-            null 
-            : wholeTable[0][0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-
-            <td>{
-            wholeTable[1][0] === 0 ? 
-            null 
-            : wholeTable[1][0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-
-            <td>{
-            wholeTable[2][0] === 0 ? 
-            null 
-            : wholeTable[2][0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-
-            <td>{
-            column3[0] === 0 ? 
-            null 
-            : column3[0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-
-            <td>{
-            column4[0] === 0 ? 
-            null 
-            : column4[0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-            
-            <td>{
-            column5[0] === 0 ? 
-            null 
-            : column5[0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-            
-            <td>{
-            column6[0] === 0 ? 
-            null 
-            : column6[0] === 1 ? 
-            <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
-            : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
-            }</td>
-            
+            {
+              wholeTable.map((tableColumn, index) => {
+                return(
+                    <td>{
+                    wholeTable[index][0] === 0 ? 
+                    null 
+                    : wholeTable[index][0] === 1 ? 
+                    <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
+                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
+                    }</td>
+                );
+              })
+            }
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          {
+              wholeTable.map((tableColumn, index) => {
+                return(
+                    <td>{
+                    wholeTable[index][1] === 0 ? 
+                    null 
+                    : wholeTable[index][1] === 1 ? 
+                    <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
+                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
+                    }</td>
+                );
+              })
+            }
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          {
+              wholeTable.map((tableColumn, index) => {
+                return(
+                    <td>{
+                    wholeTable[index][2] === 0 ? 
+                    null 
+                    : wholeTable[index][2] === 1 ? 
+                    <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
+                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
+                    }</td>
+                );
+              })
+            }
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          {
+              wholeTable.map((tableColumn, index) => {
+                return(
+                    <td>{
+                    wholeTable[index][3] === 0 ? 
+                    null 
+                    : wholeTable[index][3] === 1 ? 
+                    <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
+                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
+                    }</td>
+                );
+              })
+            }
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          {
+              wholeTable.map((tableColumn, index) => {
+                return(
+                    <td>{
+                    wholeTable[index][4] === 0 ? 
+                    null 
+                    : wholeTable[index][4] === 1 ? 
+                    <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
+                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
+                    }</td>
+                );
+              })
+            }
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          {
+              wholeTable.map((tableColumn, index) => {
+                return(
+                    <td>{
+                    wholeTable[index][5] === 0 ? 
+                    null 
+                    : wholeTable[index][5] === 1 ? 
+                    <img className="token red" src="/assets/images/counter-red-small.svg" alt="" />
+                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="" />
+                    }</td>
+                );
+              })
+            }
           </tr>
         </table>
         <img className="frontImageLayer" src="/assets/images/board-layer-white-small.svg" alt="Front of connect 4 board"/>
