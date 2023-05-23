@@ -360,6 +360,14 @@ h2{
   background-image: url("../public/assets/images/turn-background-yellow.svg");
 }
 
+.playerTurnBox.winner{
+  width: 28.5rem;
+  height: 16.0rem;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 20px;
+}
+
 .playerTurnBox h3{
   display: block;
   font-weight: 700;
@@ -372,6 +380,33 @@ h2{
   font-weight: 700;
   font-size: 5.6rem;
   line-height: 7.1rem;
+}
+
+.playerTurnBox.winner h3{
+  color: black;
+}
+
+.playerTurnBox.winner p{
+  color: black;
+}
+
+.playAgainButton{
+  background-color: var(--primary);
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: #FFFFFF;
+  padding: 1rem 2.1rem;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.playAgainButton:hover{
+  background-color: var(--secondary);
 }
 
 .markerImage{

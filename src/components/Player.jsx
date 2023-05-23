@@ -3,14 +3,17 @@ import {Route, Routes, useLocation } from 'react-router-dom';
 
 function Player() {
   //Table logic
-  const[column0, setcolumn0] = useState([0, 0, 0, 1, 2, 1]);
-  const[column1, setcolumn1] = useState([0, 0, 0, 0, 0, 1]);
+  const[column0, setcolumn0] = useState([0, 0, 0, 0, 0, 0]);
+  const[column1, setcolumn1] = useState([0, 0, 0, 0, 0, 0]);
   const[column2, setcolumn2] = useState([0, 0, 0, 0, 0, 0]);
   const[column3, setcolumn3] = useState([0, 0, 0, 0, 0, 0]);
   const[column4, setcolumn4] = useState([0, 0, 0, 0, 0, 0]);
   const[column5, setcolumn5] = useState([0, 0, 0, 0, 0, 0]);
   const[column6, setcolumn6] = useState([0, 0, 0, 0, 0, 0]);
   const[wholeTable, setWholeTable] = useState([column0, column1, column2, column3, column4, column5, column6]);
+  const[winner, setWinner] = useState(null);
+  const[playerOneScore, setPlayerOneScore] = useState(0);
+  const[playerTwoScore, setPlayerTwoScore] = useState(0);
 
   //Set who's turn it is and the timer
   const[whosTurnIsIt, setWhosTurnItIs] = useState("red");
@@ -24,9 +27,55 @@ function Player() {
     return () => clearInterval(interval);
   }, []);
 
+  //Adding tokens depending on who's turn it is
   function addToken(column) {
-    setWholeTable([column0, column1, column2, column3, column4, column5, column6]);
-    console.log(wholeTable);
+    const newWholeTable = [...wholeTable];
+    const updateColumn = [...newWholeTable[column]];
+
+    for (let i = 5; i >= 0; i--) {
+      if (updateColumn[i] == 0) {
+        if(whosTurnIsIt == "red"){
+          updateColumn[i] = 1;
+        } else{
+          updateColumn[i] = 2;
+        }
+        i = 0;
+      }
+    }
+    newWholeTable[column] = updateColumn;
+    setWholeTable(newWholeTable);
+
+    //Win when there are 4 in the same column
+    for (let columnNumber = 0; columnNumber < newWholeTable.length; columnNumber++) {
+
+      for (let i = 0; i < newWholeTable[0].length; i++) {
+        if (newWholeTable[columnNumber][i] === 1) {
+          if (newWholeTable[columnNumber][i + 1] === 1) {
+            if (newWholeTable[columnNumber][i + 2] === 1) {
+              if (newWholeTable[columnNumber][i + 3] === 1) {
+                console.log("1 Wins");
+                setWinner(1);
+                setPlayerOneScore(playerOneScore + 1)
+              }
+            }
+          }
+        } else if (newWholeTable[columnNumber][i] === 2) {
+          if (newWholeTable[columnNumber][i + 1] === 2) {
+            if (newWholeTable[columnNumber][i + 2] === 2) {
+              if (newWholeTable[columnNumber][i + 3] === 2) {
+                console.log("2 Wins");
+                setWinner(2);
+                setPlayerTwoScore(playerTwoScore + 1);
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    
+
     if (whosTurnIsIt === "red") {
       setWhosTurnItIs("yellow"); 
     } else{
@@ -41,16 +90,26 @@ function Player() {
     setMarkerX(amount);
   }
 
-  //Scoring
-  const[playerOneScore, setPlayerOneScore] = useState(0);
-  const[playerTwoScore, setPlayerTwoScore] = useState(0);
+  function restartGame() {
+    setWholeTable([column0, column1, column2, column3, column4, column5, column6]);
+    setWinner(null);
+    setTurnCounter(0);
+    setPlayerOneScore(0);
+    setPlayerTwoScore(0);
+  }
+
+  function playAgain() {
+    setWholeTable([column0, column1, column2, column3, column4, column5, column6]);
+    setWinner(null);
+    setTurnCounter(0);
+  }
 
   return (
     <div className="playArea">
       <div className="playButtonsContainer">
           <button className='gameButton'>MENUE</button>
           <img className="playScreenLogo" src="./assets/images/logo.svg" alt="logo"/>
-          <button className='gameButton'>RESTART</button>
+          <button className='gameButton' onClick={restartGame}>RESTART</button>
       </div>
       <div className="playersBox">
         <div className="playersTextBubble">
@@ -161,10 +220,27 @@ function Player() {
         </table>
         <img className="frontImageLayer" src="/assets/images/board-layer-white-small.svg" alt="Front of connect 4 board"/>
         
+        {
+        winner === null ? 
         <div className={"playerTurnBox " + whosTurnIsIt}>
             <h3>PLAYER {whosTurnIsIt === "red"? "1" : "2"}'S TURN</h3>
             <p>{turnCounter}s</p>
         </div>
+        :
+        winner === 1 ?
+        <div className={"playerTurnBox winner"}>
+          <h3>PLAYER 1</h3>
+          <p>WINS</p>
+          <button className='playAgainButton'>PLAY AGAIN</button>
+        </div>
+        :
+        <div className={"playerTurnBox winner"}>
+          <h3>PLAYER 2</h3>
+          <p>WINS</p>
+          <button className='playAgainButton' onClick={playAgain}>PLAY AGAIN</button>
+        </div>
+        }
+
         <table className='invisibleEventListener'>
             <tr>
             <img className={"markerImage " + whosTurnIsIt} src="/assets/images/marker-red.svg" alt="marker" style= {{left: markerX}}/>
