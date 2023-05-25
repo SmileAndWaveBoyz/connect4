@@ -128,6 +128,15 @@ function Player() {
               }
             }
           }
+        } else if (diagonals[diagonalLine][i] === 2) {
+          if (diagonals[diagonalLine][i + 1] === 2) {
+            if (diagonals[diagonalLine][i + 2] === 2) {
+              if (diagonals[diagonalLine][i + 3] === 2) {
+                setWinner(2);
+                setPlayerTwoScore(playerTwoScore + 1)
+              }
+            }
+          }
         }
       }
     }
