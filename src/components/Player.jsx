@@ -53,7 +53,6 @@ function Player() {
           if (newWholeTable[columnNumber][i + 1] === 1) {
             if (newWholeTable[columnNumber][i + 2] === 1) {
               if (newWholeTable[columnNumber][i + 3] === 1) {
-                console.log("1 Wins");
                 setWinner(1);
                 setPlayerOneScore(playerOneScore + 1)
               }
@@ -63,7 +62,6 @@ function Player() {
           if (newWholeTable[columnNumber][i + 1] === 2) {
             if (newWholeTable[columnNumber][i + 2] === 2) {
               if (newWholeTable[columnNumber][i + 3] === 2) {
-                console.log("2 Wins");
                 setWinner(2);
                 setPlayerTwoScore(playerTwoScore + 1);
               }
@@ -73,6 +71,40 @@ function Player() {
       }
 
     }
+
+    //Win when there are 4 in the same row
+    let rows = [];
+    
+
+    for (let rowNumber = 5; rowNumber >= 0; rowNumber--) {
+      rows[rowNumber] = [newWholeTable[0][rowNumber], newWholeTable[1][rowNumber], newWholeTable[2][rowNumber], newWholeTable[3][rowNumber], newWholeTable[4][rowNumber], newWholeTable[5][rowNumber], newWholeTable[6][rowNumber]];
+      console.log(rows[rowNumber]);
+
+      for (let i = 0; i <= 6; i++) {
+
+        if (rows[rowNumber][i] === 1) {
+          if (rows[rowNumber][i + 1] === 1) {
+            if (rows[rowNumber][i + 2] === 1) {
+              if (rows[rowNumber][i + 3] === 1) {
+                setWinner(1);
+                setPlayerOneScore(playerOneScore + 1)
+              }
+            }
+          }
+        } else if (rows[rowNumber][i] === 2) {
+          if (rows[rowNumber][i + 1] === 2) {
+            if (rows[rowNumber][i + 2] === 2) {
+              if (rows[rowNumber][i + 3] === 2) {
+                setWinner(2);
+                setPlayerTwoScore(playerTwoScore + 1)
+              }
+            }
+          }
+        } 
+      }
+    }
+
+
 
     
 
