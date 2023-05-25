@@ -74,11 +74,8 @@ function Player() {
 
     //Win when there are 4 in the same row
     let rows = [];
-    
-
     for (let rowNumber = 5; rowNumber >= 0; rowNumber--) {
       rows[rowNumber] = [newWholeTable[0][rowNumber], newWholeTable[1][rowNumber], newWholeTable[2][rowNumber], newWholeTable[3][rowNumber], newWholeTable[4][rowNumber], newWholeTable[5][rowNumber], newWholeTable[6][rowNumber]];
-      console.log(rows[rowNumber]);
 
       for (let i = 0; i <= 6; i++) {
 
@@ -104,9 +101,21 @@ function Player() {
       }
     }
 
+    //Win when there are 4 in the same diagonal
+    const diagonals = [];
+    diagonals[0] = [newWholeTable[0][3], newWholeTable[1][2], newWholeTable[2][1], newWholeTable[3][0]];
+    diagonals[1] = [newWholeTable[0][4], newWholeTable[1][3], newWholeTable[2][2], newWholeTable[3][1], newWholeTable[4][0]];
+    diagonals[2] = [newWholeTable[0][5], newWholeTable[1][4], newWholeTable[2][3], newWholeTable[3][2], newWholeTable[4][1], newWholeTable[5][0]];
+    diagonals[3] = [newWholeTable[1][5], newWholeTable[2][4], newWholeTable[3][3], newWholeTable[4][2], newWholeTable[5][1], newWholeTable[6][0]];
+    diagonals[4] = [newWholeTable[2][5], newWholeTable[3][4], newWholeTable[4][3], newWholeTable[5][2], newWholeTable[6][1]];
+    diagonals[5] = [newWholeTable[3][5], newWholeTable[4][4], newWholeTable[5][3], newWholeTable[6][2]];
 
-
-    
+    diagonals[6] = [newWholeTable[6][3], newWholeTable[5][2], newWholeTable[4][1], newWholeTable[3][0]];
+    diagonals[7] = [newWholeTable[6][4], newWholeTable[5][3], newWholeTable[4][2], newWholeTable[3][1], newWholeTable[2][0]];
+    diagonals[8] = [newWholeTable[6][5], newWholeTable[5][4], newWholeTable[4][3], newWholeTable[3][2], newWholeTable[2][1], newWholeTable[1][0]];
+    diagonals[9] = [newWholeTable[5][5], newWholeTable[4][4], newWholeTable[3][3], newWholeTable[2][2], newWholeTable[1][1], newWholeTable[0][0]];
+    diagonals[10] = [newWholeTable[4][5], newWholeTable[3][4], newWholeTable[2][3], newWholeTable[1][2], newWholeTable[0][1]];
+    diagonals[11] = [newWholeTable[3][5], newWholeTable[2][4], newWholeTable[1][3], newWholeTable[0][2]];
 
     if (whosTurnIsIt === "red") {
       setWhosTurnItIs("yellow"); 
