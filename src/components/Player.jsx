@@ -117,6 +117,22 @@ function Player() {
     diagonals[10] = [newWholeTable[4][5], newWholeTable[3][4], newWholeTable[2][3], newWholeTable[1][2], newWholeTable[0][1]];
     diagonals[11] = [newWholeTable[3][5], newWholeTable[2][4], newWholeTable[1][3], newWholeTable[0][2]];
 
+    for (let diagonalLine = 0; diagonalLine <= 11; diagonalLine++) {
+      for (let i = 0; i < diagonals[0].length; i++) {
+        if (diagonals[diagonalLine][i] === 1) {
+          if (diagonals[diagonalLine][i + 1] === 1) {
+            if (diagonals[diagonalLine][i + 2] === 1) {
+              if (diagonals[diagonalLine][i + 3] === 1) {
+                setWinner(1);
+                setPlayerOneScore(playerOneScore + 1)
+              }
+            }
+          }
+        }
+      }
+    }
+
+
     if (whosTurnIsIt === "red") {
       setWhosTurnItIs("yellow"); 
     } else{
