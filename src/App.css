@@ -464,6 +464,7 @@ h2{
     position: absolute;
     top: -28px;
     width: 61.9rem;
+    z-index: 0;
   }
 
   .token.red{
