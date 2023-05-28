@@ -284,6 +284,20 @@ function Player() {
             }
           </tr>
         </table>
+        <div className="markerImageContainer">
+          <img className={"markerImage " + whosTurnIsIt} src="/assets/images/marker-red.svg" alt="marker" style= {{left: markerX}}/>
+        </div>
+        <table className='invisibleEventListener'>
+            <tr>
+              <td onClick={() => addToken(0)} onMouseEnter={() => moveMarker("4.3%")}></td>
+              <td onClick={() => addToken(1)} onMouseEnter={() => moveMarker("18.5%")}></td>
+              <td onClick={() => addToken(2)} onMouseEnter={() => moveMarker("32.62%")}></td>
+              <td onClick={() => addToken(3)} onMouseEnter={() => moveMarker("47%")}></td>
+              <td onClick={() => addToken(4)} onMouseEnter={() => moveMarker("61%")}></td>
+              <td onClick={() => addToken(5)} onMouseEnter={() => moveMarker("75.4%")}></td>
+              <td onClick={() => addToken(6)} onMouseEnter={() => moveMarker("89.55%")}></td>
+            </tr>
+        </table>
         <img className="frontImageLayer" src="/assets/images/board-layer-white-small.svg" alt="Front of connect 4 board"/>
         
         {
@@ -306,19 +320,6 @@ function Player() {
           <button className='playAgainButton' onClick={playAgain}>PLAY AGAIN</button>
         </div>
         }
-
-        <table className='invisibleEventListener'>
-            <tr>
-            <img className={"markerImage " + whosTurnIsIt} src="/assets/images/marker-red.svg" alt="marker" style= {{left: markerX}}/>
-              <td onClick={() => addToken(0)} onMouseEnter={() => moveMarker("11%")}></td>
-              <td onClick={() => addToken(1)} onMouseEnter={() => moveMarker("24.5%")}></td>
-              <td onClick={() => addToken(2)} onMouseEnter={() => moveMarker("37.55%")}></td>
-              <td onClick={() => addToken(3)} onMouseEnter={() => moveMarker("50.5%")}></td>
-              <td onClick={() => addToken(4)} onMouseEnter={() => moveMarker("63.7%")}></td>
-              <td onClick={() => addToken(5)} onMouseEnter={() => moveMarker("77%")}></td>
-              <td onClick={() => addToken(6)} onMouseEnter={() => moveMarker("90%")}></td>
-            </tr>
-        </table>
       </div>
     </div>
   )

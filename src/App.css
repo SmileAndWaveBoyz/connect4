@@ -285,11 +285,13 @@ h2{
 
 .backImageLayer{
   z-index: 1;
+  /* display: none; */
 }
 
 .frontImageLayer{
   z-index: 3;
   position: relative;
+  /* display: none; */
 }
 
 
@@ -306,6 +308,15 @@ h2{
   position: relative;
 }
 
+.gameTable tr td{
+  /* border: 1px solid black; */
+}
+
+.invisibleEventListener tr td{
+  /* border: 1px solid rgb(255, 251, 0); */
+}
+
+
 .invisibleEventListener{
   width: 32.8rem;
   height: 30.5rem;
@@ -316,9 +327,6 @@ h2{
   outline: 0;
 }
 
-.invisibleEventListener tr td{
-  border: 1px solid rgb(43, 42, 40);
-}
 
 .token{
   position: absolute;
@@ -416,7 +424,6 @@ h2{
 @media screen and (min-width: 768px) {
   .backImageLayer{
     content: url("/public/assets/images/board-layer-black-large.svg");
-    
   }
   
   .frontImageLayer{
@@ -431,12 +438,18 @@ h2{
 
   .invisibleEventListener{
     top: -30px;
-    transform: translate(-23px);
     position: absolute;
-    width: 67.2rem;
+    width: 61.9rem;
     height: 56.0rem;
   }
-  
+
+  .markerImageContainer{
+    position: absolute;
+    top: -28px;
+    outline: 1px solid green;
+    width: 61.9rem;
+  }
+
   .token.red{
     content: url("/public/assets/images/counter-red-large.svg");
   }
