@@ -297,8 +297,8 @@ h2{
   top: 0px;
   z-index: 2;
   position: absolute;
-  width: 328px;
-  height: 286px;
+  width: 32.8rem;
+  height: 28.6rem;
 }
 
 .gameBoard table tr td{
@@ -307,8 +307,8 @@ h2{
 }
 
 .invisibleEventListener{
-  width: 328px;
-  height: 80px;
+  width: 32.8rem;
+  height: 30.5rem;
   top: -22px;
   position: absolute;
   z-index: 5;
@@ -317,7 +317,7 @@ h2{
 }
 
 .invisibleEventListener tr td{
-  /* border: 1px solid rgb(43, 42, 40); */
+  border: 1px solid rgb(43, 42, 40);
 }
 
 .token{
@@ -416,6 +416,7 @@ h2{
 @media screen and (min-width: 768px) {
   .backImageLayer{
     content: url("/public/assets/images/board-layer-black-large.svg");
+    
   }
   
   .frontImageLayer{
@@ -423,8 +424,8 @@ h2{
   }
 
   .gameTable{
-    width: 619px;
-    height: 530px;
+    width: 61.9rem;
+    height: 53.0rem;
     top: 10px;
   }
 
@@ -432,8 +433,8 @@ h2{
     top: -30px;
     transform: translate(-23px);
     position: absolute;
-    width: 672px;
-    height: 140px;
+    width: 67.2rem;
+    height: 56.0rem;
   }
   
   .token.red{
