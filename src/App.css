@@ -310,7 +310,7 @@ h2{
 }
 
 .gameTable tr td{
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 .invisibleEventListener tr td{
