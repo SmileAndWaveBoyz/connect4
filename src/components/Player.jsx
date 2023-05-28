@@ -214,7 +214,7 @@ function Player() {
   return (
     <div className="playArea">
       <div className="playButtonsContainer">
-          <button className='gameButton'>MENUE</button>
+          <button className='gameButton'>MENU</button>
           <img className="playScreenLogo" src="./assets/images/logo.svg" alt="logo"/>
           <button className='gameButton' onClick={restartGame}>RESTART</button>
       </div>
