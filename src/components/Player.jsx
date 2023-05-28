@@ -186,7 +186,6 @@ function Player() {
     newFallingTokenOpacity[column] = 1;
     setFallingTokenOpacity(newFallingTokenOpacity);
 
-
     if (wholeTable[column][5] === 0) {
       setFallTime("0.35");
       setColumnFloor("94%");
@@ -328,7 +327,7 @@ function Player() {
         <div className="markerImageContainer">
           <img className={"markerImage " + whosTurnIsIt} src="/assets/images/marker-red.svg" alt="marker" style= {{left: markerX}}/>
         </div>
-        <table className='invisibleEventListener'>
+        <table className='invisibleEventListener noSelect'>
             <tr>
               <td onClick={() => {
                 addToken(0);
