@@ -291,12 +291,13 @@ h2{
 .frontImageLayer{
   z-index: 3;
   position: relative;
+  /* height: 100%; */
   /* display: none; */
 }
 
 
 .gameTable{
-  top: 0px;
+  top: 3px;
   z-index: 2;
   position: absolute;
   width: 32.8rem;
@@ -309,7 +310,7 @@ h2{
 }
 
 .gameTable tr td{
-  /* border: 1px solid black; */
+  border: 1px solid black;
 }
 
 .invisibleEventListener tr td{
@@ -319,7 +320,7 @@ h2{
 .invisibleEventListener{
   width: 32.8rem;
   height: 30.5rem;
-  top: -22px;
+  top: -21px;
   position: absolute;
   z-index: 4;
   cursor: pointer;

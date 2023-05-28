@@ -198,13 +198,13 @@ function Player() {
       setColumnFloor("62.5%");
     } else if (wholeTable[column][2] === 0){
       setFallTime("0.20");
-      setColumnFloor("46%");
+      setColumnFloor("47%");
     } else if (wholeTable[column][1] === 0){
       setFallTime("0.15");
-      setColumnFloor("30%");
+      setColumnFloor("31.2%");
     } else if (wholeTable[column][0] === 0){
       setFallTime("0.15");
-      setColumnFloor("14%");
+      setColumnFloor("15.2%");
     }
 
     const fallTimeinMSeconds = fallTime * 1000;
