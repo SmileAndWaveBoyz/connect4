@@ -446,7 +446,7 @@ h2{
   .markerImageContainer{
     position: absolute;
     top: -28px;
-    outline: 1px solid green;
+    /* outline: 1px solid green; */
     width: 61.9rem;
   }
 
