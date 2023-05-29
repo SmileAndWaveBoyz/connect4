@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react'
-import {Route, Routes, useLocation } from 'react-router-dom';
+import {Route, Routes, useLocation, NavLink } from 'react-router-dom';
 
 function Player() {
   //Table logic
@@ -17,6 +17,7 @@ function Player() {
   const[columnFloor, setColumnFloor] = useState(0);
   const[fallingTokenOpacity, setFallingTokenOpacity] = useState(["0","0","0","0","0","0", "0"]);
   const[fallTime, setFallTime] = useState("0.35");
+  const[display, setDisplay] = useState("none"); // This is for the pause menu
 
   //Set who's turn it is and the timer
   const[whosTurnIsIt, setWhosTurnItIs] = useState("red");
@@ -172,6 +173,7 @@ function Player() {
     setTurnCounter(0);
     setPlayerOneScore(0);
     setPlayerTwoScore(0);
+    setDisplay("none"); // This is just to make the pause menu go away
   }
 
   function playAgain() {
@@ -213,8 +215,17 @@ function Player() {
   return (
 
     <div className="playArea">
+
+      <div className="pauseMenu" style={{display: display}}>
+        <h2>PAUSE</h2>
+        <button onClick={() => setDisplay("none")}>CONTINUE GAME</button>
+        <button onClick={restartGame}>RESTART</button>
+        <NavLink className= "pauseQuitButton" to="/">QUIT GAME</NavLink>
+      </div>
+      <div className="overlay" style={{display: display}}></div>
+
       <div className="playButtonsContainer">
-          <button className='gameButton'>MENU</button>
+          <button className='gameButton' onClick={() => setDisplay("flex")}>MENU</button>
           <img className="playScreenLogo" src="./assets/images/logo.svg" alt="logo"/>
           <button className='gameButton' onClick={restartGame}>RESTART</button>
       </div>

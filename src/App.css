@@ -448,6 +448,7 @@ footer{
   height: 236px;
   border-radius: 60px;
   transition: all 0.4s;
+  z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
@@ -550,3 +551,88 @@ footer{
   }
 
  }
+
+/* Pause menu  */
+.pauseMenu{
+  margin: 0 auto;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 43.7rem;
+  width:33.5rem;
+  background-color: var(--primary);
+  border-radius: 20px;
+  margin-top: 14rem;
+  z-index: 6;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 0px 7px 0px 4px black;
+  outline: 3px solid black;
+}
+
+.pauseMenu h2{
+  margin: 3rem 1rem;
+  font-size: 5.6rem;
+  line-height: 71px;
+  color: #FFFFFF;
+}
+
+.pauseMenu button, .pauseMenu a{
+  width: 90%;
+  margin-bottom: 3rem;
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: #000000;
+  border-radius: 10px;
+  outline: 3px solid black;
+  border: 0;
+  padding: 2rem;
+  box-shadow: 0px 7px 0px 4px;
+  transition: all 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.pauseMenu .pauseQuitButton{
+  background-color: var(--player1);
+  color: white;
+  box-shadow: 0px 7px 0px 4px black;
+}
+
+.pauseMenu button:hover{
+  box-shadow: 0px 7px 0px 4px var(--outlineHover);
+}
+
+.pauseMenu .pauseQuitButton:hover{
+  box-shadow: 0px 7px 0px 4px var(--outlineHover);
+}
+
+.overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 95vh;
+  background-color: rgb(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+@media screen and (min-width: 768px) {
+  .pauseMenu{
+    height: 49.1rem;
+    width:48rem;
+  }
+
+  .pauseMenu h2{
+    margin-top: 5rem;
+    margin-bottom: 4.4rem;
+  }
+
+  .overlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.3);
+  }
+}
