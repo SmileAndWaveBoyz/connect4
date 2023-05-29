@@ -155,7 +155,6 @@ function Player() {
         }
       }
   
-  
       if (whosTurnIsIt === "red") {
         setWhosTurnItIs("yellow"); 
       } else{
@@ -164,7 +163,6 @@ function Player() {
       setTurnCounter(0);
       
     },fallTimeinMSeconds);
-
 
   }
 
@@ -468,7 +466,7 @@ function Player() {
         <div className={"playerTurnBox winner"}>
           <h3>PLAYER 1</h3>
           <p>WINS</p>
-          <button className='playAgainButton'>PLAY AGAIN</button>
+          <button className='playAgainButton' onClick={playAgain}>PLAY AGAIN</button>
         </div>
         :
         <div className={"playerTurnBox winner"}>
