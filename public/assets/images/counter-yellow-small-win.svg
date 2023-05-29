@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="41px"
+   height="46px"
+   viewBox="0 0 41 46"
+   version="1.1"
+   id="svg23"
+   sodipodi:docname="counter-yellow-small - win.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview25"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="21.782609"
+     inkscape:cx="20.520958"
+     inkscape:cy="23"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg23" />
+  <title
+     id="title2">counter-yellow-small</title>
+  <defs
+     id="defs12">
+    <circle
+       id="path-1"
+       cx="19.9756098"
+       cy="19.9756098"
+       r="16.9756098" />
+    <filter
+       x="0"
+       y="0"
+       width="1"
+       height="1.1472701"
+       filterUnits="objectBoundingBox"
+       id="filter-2">
+      <feOffset
+         dx="0"
+         dy="5"
+         in="SourceAlpha"
+         result="shadowOffsetInner1"
+         id="feOffset5" />
+      <feComposite
+         in="shadowOffsetInner1"
+         in2="SourceAlpha"
+         operator="arithmetic"
+         k2="-1"
+         k3="1"
+         result="shadowInnerInner1"
+         id="feComposite7" />
+      <feColorMatrix
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0"
+         type="matrix"
+         in="shadowInnerInner1"
+         id="feColorMatrix9" />
+    </filter>
+  </defs>
+  <g
+     id="Designs"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="counter-yellow-small"
+       transform="translate(0.975610, 0.975610)">
+      <circle
+         id="Oval-Copy-49"
+         fill="#000000"
+         cx="20"
+         cy="20"
+         r="20" />
+      <circle
+         id="Oval-Copy-50"
+         fill="#000000"
+         cx="20"
+         cy="25"
+         r="20" />
+      <g
+         id="Oval-Copy-48">
+        <use
+           fill="#FFCE67"
+           fill-rule="evenodd"
+           xlink:href="#path-1"
+           id="use16" />
+        <use
+           fill="black"
+           fill-opacity="1"
+           filter="url(#filter-2)"
+           xlink:href="#path-1"
+           id="use18" />
+      </g>
+    </g>
+  </g>
+  <ellipse
+     style="fill:#ffffff"
+     id="path235"
+     cx="20.865271"
+     cy="20.7505"
+     rx="8.5618763"
+     ry="7.9880238" />
+  <ellipse
+     style="fill:#ffce67;fill-opacity:1"
+     id="path652"
+     cx="20.543913"
+     cy="20.727545"
+     rx="3.787425"
+     ry="3.9251497" />
+  <ellipse
+     style="fill:#ffce67;fill-opacity:1"
+     id="path654"
+     cx="21.622755"
+     cy="21.37026"
+     rx="0.50499004"
+     ry="1.1247505" />
+</svg>

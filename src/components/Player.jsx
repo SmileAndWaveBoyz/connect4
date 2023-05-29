@@ -64,6 +64,13 @@ function Player() {
                   setWinner(1);
                   setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
+
+                  //set the peices 
+                  newWholeTable[columnNumber][i] = 3;
+                  newWholeTable[columnNumber][i + 1] = 3;
+                  newWholeTable[columnNumber][i + 2] = 3;
+                  newWholeTable[columnNumber][i + 3] = 3;
+                  setWholeTable(newWholeTable);
                 }
               }
             }
@@ -74,6 +81,13 @@ function Player() {
                   setWinner(2);
                   setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1);
+
+                  //set the peices 
+                  newWholeTable[columnNumber][i] = 4;
+                  newWholeTable[columnNumber][i + 1] = 4;
+                  newWholeTable[columnNumber][i + 2] = 4;
+                  newWholeTable[columnNumber][i + 3] = 4;
+                  setWholeTable(newWholeTable);
                 }
               }
             }
@@ -96,6 +110,13 @@ function Player() {
                   setWinner(1);
                   setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
+                  
+                  //set the peices 
+                  newWholeTable[i][rowNumber] = 3;
+                  newWholeTable[i + 1][rowNumber] = 3;
+                  newWholeTable[i + 2][rowNumber] = 3;
+                  newWholeTable[i + 3][rowNumber] = 3;
+                  setWholeTable(newWholeTable);
                 }
               }
             }
@@ -106,10 +127,18 @@ function Player() {
                   setWinner(2);
                   setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1)
+
+                //set the peices 
+                newWholeTable[i][rowNumber] = 4;
+                newWholeTable[i + 1][rowNumber] = 4;
+                newWholeTable[i + 2][rowNumber] = 4;
+                newWholeTable[i + 3][rowNumber] = 4;
+                setWholeTable(newWholeTable);
                 }
               }
             }
           } 
+
         }
       }
   
@@ -130,6 +159,7 @@ function Player() {
       diagonals[11] = [newWholeTable[3][5], newWholeTable[2][4], newWholeTable[1][3], newWholeTable[0][2]];
   
       for (let diagonalLine = 0; diagonalLine <= 11; diagonalLine++) {
+        
         for (let i = 0; i < diagonals[0].length; i++) {
           if (diagonals[diagonalLine][i] === 1) {
             if (diagonals[diagonalLine][i + 1] === 1) {
@@ -256,12 +286,16 @@ function Player() {
             {
               wholeTable.map((tableColumn, index) => {
                 return(
-                    <td>{
+                  <td>{
                     wholeTable[index][0] === 0 ? 
                     null 
                     : wholeTable[index][0] === 1 ? 
                     <img className="token red" src="/assets/images/counter-red-small.svg" alt="Red piece" />
-                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][0] == 2 ?
+                    <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][0] === 3 ?
+                    <img className="token red win" src="/assets/images/counter-red-small-win.svg" alt="Red winning piece"/>
+                    : <img className="token yellow win" src="/assets/images/counter-yellow-small.svg" alt="Yellow winning piece"/>
                     }</td>
                 );
               })
@@ -271,12 +305,16 @@ function Player() {
           {
               wholeTable.map((tableColumn, index) => {
                 return(
-                    <td>{
+                  <td>{
                     wholeTable[index][1] === 0 ? 
                     null 
                     : wholeTable[index][1] === 1 ? 
                     <img className="token red" src="/assets/images/counter-red-small.svg" alt="Red piece" />
-                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt=" Yellow piece" />
+                    : wholeTable[index][1] == 2 ?
+                    <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][1] === 3 ?
+                    <img className="token red win" src="/assets/images/counter-red-small-win.svg" alt="Red winning piece"/>
+                    : <img className="token yellow win" src="/assets/images/counter-yellow-small.svg" alt="Yellow winning piece"/>
                     }</td>
                 );
               })
@@ -286,12 +324,16 @@ function Player() {
           {
               wholeTable.map((tableColumn, index) => {
                 return(
-                    <td>{
+                  <td>{
                     wholeTable[index][2] === 0 ? 
                     null 
                     : wholeTable[index][2] === 1 ? 
                     <img className="token red" src="/assets/images/counter-red-small.svg" alt="Red piece" />
-                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][2] == 2 ?
+                    <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][2] === 3 ?
+                    <img className="token red win" src="/assets/images/counter-red-small-win.svg" alt="Red winning piece"/>
+                    : <img className="token yellow win" src="/assets/images/counter-yellow-small.svg" alt="Yellow winning piece"/>
                     }</td>
                 );
               })
@@ -301,12 +343,16 @@ function Player() {
           {
               wholeTable.map((tableColumn, index) => {
                 return(
-                    <td>{
+                  <td>{
                     wholeTable[index][3] === 0 ? 
                     null 
                     : wholeTable[index][3] === 1 ? 
                     <img className="token red" src="/assets/images/counter-red-small.svg" alt="Red piece" />
-                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][3] == 2 ?
+                    <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][3] === 3 ?
+                    <img className="token red win" src="/assets/images/counter-red-small-win.svg" alt="Red winning piece"/>
+                    : <img className="token yellow win" src="/assets/images/counter-yellow-small.svg" alt="Yellow winning piece"/>
                     }</td>
                 );
               })
@@ -316,12 +362,16 @@ function Player() {
           {
               wholeTable.map((tableColumn, index) => {
                 return(
-                    <td>{
+                  <td>{
                     wholeTable[index][4] === 0 ? 
                     null 
                     : wholeTable[index][4] === 1 ? 
                     <img className="token red" src="/assets/images/counter-red-small.svg" alt="Red piece" />
-                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][4] == 2 ?
+                    <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][4] === 3 ?
+                    <img className="token red win" src="/assets/images/counter-red-small-win.svg" alt="Red winning piece"/>
+                    : <img className="token yellow win" src="/assets/images/counter-yellow-small.svg" alt="Yellow winning piece"/>
                     }</td>
                 );
               })
@@ -336,7 +386,11 @@ function Player() {
                     null 
                     : wholeTable[index][5] === 1 ? 
                     <img className="token red" src="/assets/images/counter-red-small.svg" alt="Red piece" />
-                    : <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][5] == 2 ?
+                    <img className="token yellow" src="/assets/images/counter-yellow-small.svg" alt="Yellow piece" />
+                    : wholeTable[index][5] === 3 ?
+                    <img className="token red win" src="/assets/images/counter-red-small-win.svg" alt="Red winning piece"/>
+                    : <img className="token yellow win" src="/assets/images/counter-yellow-small.svg" alt="Yellow winning piece"/>
                     }</td>
                 );
               })

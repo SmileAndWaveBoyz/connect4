@@ -351,9 +351,15 @@ h2{
 .token.red{
   content: url("/public/assets/images/counter-red-small.svg");
 }
+.token.red.win{
+  content: url("/public/assets/images/counter-red-small-win.svg");
+}
 
 .token.yellow{
   content: url("/public/assets/images/counter-yellow-small.svg");
+}
+.token.yellow.win{
+  content: url("/public/assets/images/counter-yellow-small-win.svg");
 }
 
 .invisibleEventListener.fallingTokenTable{
@@ -380,6 +386,7 @@ h2{
 
 .playerTurnBox.red{
   background-image: url("../public/assets/images/turn-background-red.svg");
+
 }
 
 .playerTurnBox.yellow{
@@ -483,9 +490,15 @@ footer{
   .token.red{
     content: url("/public/assets/images/counter-red-large.svg");
   }
+  .token.red.win{
+    content: url("/public/assets/images/counter-red-large-win.svg");
+  }
 
   .token.yellow{
     content: url("/public/assets/images/counter-yellow-large.svg");
+  }
+  .token.yellow.win{
+    content: url("/public/assets/images/counter-yellow-large-win.svg");
   }
 
 }
