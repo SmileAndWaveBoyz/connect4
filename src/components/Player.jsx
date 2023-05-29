@@ -18,6 +18,7 @@ function Player() {
   const[fallingTokenOpacity, setFallingTokenOpacity] = useState(["0","0","0","0","0","0", "0"]);
   const[fallTime, setFallTime] = useState("0.35");
   const[display, setDisplay] = useState("none"); // This is for the pause menu
+  const[tableDisplay, setTableDisplay] = useState("table");
 
   //Set who's turn it is and the timer
   const[whosTurnIsIt, setWhosTurnItIs] = useState("red");
@@ -61,6 +62,7 @@ function Player() {
               if (newWholeTable[columnNumber][i + 2] === 1) {
                 if (newWholeTable[columnNumber][i + 3] === 1) {
                   setWinner(1);
+                  setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
                 }
               }
@@ -70,6 +72,7 @@ function Player() {
               if (newWholeTable[columnNumber][i + 2] === 2) {
                 if (newWholeTable[columnNumber][i + 3] === 2) {
                   setWinner(2);
+                  setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1);
                 }
               }
@@ -91,6 +94,7 @@ function Player() {
               if (rows[rowNumber][i + 2] === 1) {
                 if (rows[rowNumber][i + 3] === 1) {
                   setWinner(1);
+                  setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
                 }
               }
@@ -100,6 +104,7 @@ function Player() {
               if (rows[rowNumber][i + 2] === 2) {
                 if (rows[rowNumber][i + 3] === 2) {
                   setWinner(2);
+                  setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1)
                 }
               }
@@ -131,6 +136,7 @@ function Player() {
               if (diagonals[diagonalLine][i + 2] === 1) {
                 if (diagonals[diagonalLine][i + 3] === 1) {
                   setWinner(1);
+                  setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
                 }
               }
@@ -140,6 +146,7 @@ function Player() {
               if (diagonals[diagonalLine][i + 2] === 2) {
                 if (diagonals[diagonalLine][i + 3] === 2) {
                   setWinner(2);
+                  setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1)
                 }
               }
@@ -174,12 +181,14 @@ function Player() {
     setPlayerOneScore(0);
     setPlayerTwoScore(0);
     setDisplay("none"); // This is just to make the pause menu go away
+    setTableDisplay("table");
   }
 
   function playAgain() {
     setWholeTable([column0, column1, column2, column3, column4, column5, column6]);
     setWinner(null);
     setTurnCounter(0);
+    setTableDisplay("table");
   }
 
   //Token animation
@@ -339,7 +348,7 @@ function Player() {
         <div className="markerImageContainer">
           <img className={"markerImage " + whosTurnIsIt} src="/assets/images/marker-red.svg" alt="marker" style= {{left: markerX}}/>
         </div>
-        <table className='invisibleEventListener noSelect'>
+        <table className='invisibleEventListener noSelect' style={{display: tableDisplay}}>
             <tr>
               <td onClick={() => {
                 addToken(0);
