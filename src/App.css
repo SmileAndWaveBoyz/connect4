@@ -20,6 +20,7 @@ body{
   font-style: normal;
 }
 
+
 .buttonsContainer{
   width: 335px;
   height: 305px;
@@ -436,6 +437,17 @@ h2{
 
 .markerImage{
   display: none;
+}
+
+footer{
+  position: fixed;
+  bottom: -80px;
+  left: 0;
+  background-color: var(--primary);
+  width: 100%;
+  height: 236px;
+  border-radius: 60px;
+  transition: all 0.4s;
 }
 
 @media screen and (min-width: 768px) {

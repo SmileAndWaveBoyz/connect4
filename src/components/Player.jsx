@@ -211,6 +211,7 @@ function Player() {
   }
 
   return (
+
     <div className="playArea">
       <div className="playButtonsContainer">
           <button className='gameButton'>MENU</button>
@@ -457,6 +458,14 @@ function Player() {
         </div>
         }
       </div>
+      
+      {
+      winner === 1 ?
+      <footer style={{backgroundColor: "var(--player1)"}}></footer>
+      : winner === 2 ?
+      <footer style={{backgroundColor: "var(--player2)"}}></footer>
+      : <footer style={{backgroundColor: "var(--primary)"}}></footer>
+      }
     </div>
   )
 }
