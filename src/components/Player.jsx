@@ -34,6 +34,7 @@ function Player() {
 
   //Adding tokens depending on who's turn it is
   function addToken(column) {
+
     let fallTimeinMSeconds = fallTime * 1000;
     const myTimeout = setTimeout(() => {
 
@@ -141,49 +142,104 @@ function Player() {
 
         }
       }
-  
+
       //Win when there are 4 in the same diagonal
-      const diagonals = [];
-      diagonals[0] = [newWholeTable[0][3], newWholeTable[1][2], newWholeTable[2][1], newWholeTable[3][0]];
-      diagonals[1] = [newWholeTable[0][4], newWholeTable[1][3], newWholeTable[2][2], newWholeTable[3][1], newWholeTable[4][0]];
-      diagonals[2] = [newWholeTable[0][5], newWholeTable[1][4], newWholeTable[2][3], newWholeTable[3][2], newWholeTable[4][1], newWholeTable[5][0]];
-      diagonals[3] = [newWholeTable[1][5], newWholeTable[2][4], newWholeTable[3][3], newWholeTable[4][2], newWholeTable[5][1], newWholeTable[6][0]];
-      diagonals[4] = [newWholeTable[2][5], newWholeTable[3][4], newWholeTable[4][3], newWholeTable[5][2], newWholeTable[6][1]];
-      diagonals[5] = [newWholeTable[3][5], newWholeTable[4][4], newWholeTable[5][3], newWholeTable[6][2]];
-  
-      diagonals[6] = [newWholeTable[6][3], newWholeTable[5][2], newWholeTable[4][1], newWholeTable[3][0]];
-      diagonals[7] = [newWholeTable[6][4], newWholeTable[5][3], newWholeTable[4][2], newWholeTable[3][1], newWholeTable[2][0]];
-      diagonals[8] = [newWholeTable[6][5], newWholeTable[5][4], newWholeTable[4][3], newWholeTable[3][2], newWholeTable[2][1], newWholeTable[1][0]];
-      diagonals[9] = [newWholeTable[5][5], newWholeTable[4][4], newWholeTable[3][3], newWholeTable[2][2], newWholeTable[1][1], newWholeTable[0][0]];
-      diagonals[10] = [newWholeTable[4][5], newWholeTable[3][4], newWholeTable[2][3], newWholeTable[1][2], newWholeTable[0][1]];
-      diagonals[11] = [newWholeTable[3][5], newWholeTable[2][4], newWholeTable[1][3], newWholeTable[0][2]];
-  
-      for (let diagonalLine = 0; diagonalLine <= 11; diagonalLine++) {
-        
-        for (let i = 0; i < diagonals[0].length; i++) {
-          if (diagonals[diagonalLine][i] === 1) {
-            if (diagonals[diagonalLine][i + 1] === 1) {
-              if (diagonals[diagonalLine][i + 2] === 1) {
-                if (diagonals[diagonalLine][i + 3] === 1) {
-                  setWinner(1);
-                  setTableDisplay("none");
-                  setPlayerOneScore(playerOneScore + 1)
-                }
-              }
-            }
-          } else if (diagonals[diagonalLine][i] === 2) {
-            if (diagonals[diagonalLine][i + 1] === 2) {
-              if (diagonals[diagonalLine][i + 2] === 2) {
-                if (diagonals[diagonalLine][i + 3] === 2) {
-                  setWinner(2);
-                  setTableDisplay("none");
-                  setPlayerTwoScore(playerTwoScore + 1)
-                }
-              }
-            }
+      for (let columnIndex = 0; columnIndex < newWholeTable.length; columnIndex++) {
+        for (let rowIndex = 0; rowIndex < newWholeTable[columnIndex].length; rowIndex++) {
+          // Check diagonals starting from the current position
+
+          // Check diagonal to the right and down
+          if (
+            columnIndex + 3 < newWholeTable.length &&
+            rowIndex + 3 < newWholeTable[columnIndex].length &&
+            newWholeTable[columnIndex][rowIndex] === 1 &&
+            newWholeTable[columnIndex + 1][rowIndex + 1] === 1 &&
+            newWholeTable[columnIndex + 2][rowIndex + 2] === 1 &&
+            newWholeTable[columnIndex + 3][rowIndex + 3] === 1
+          ) {
+            setWinner(1);
+            setTableDisplay("none");
+            setPlayerOneScore(playerOneScore + 1)
+
+            //set the peices 
+            newWholeTable[columnIndex][rowIndex] = 3;
+            newWholeTable[columnIndex + 1][rowIndex + 1] = 3;
+            newWholeTable[columnIndex + 2][rowIndex + 2] = 3;
+            newWholeTable[columnIndex + 3][rowIndex + 3] = 3;
+            setWholeTable(newWholeTable);
+          }
+
+          // Check diagonal to the right and up
+          if (
+            columnIndex + 3 < newWholeTable.length &&
+            rowIndex - 3 >= 0 &&
+            newWholeTable[columnIndex][rowIndex] === 1 &&
+            newWholeTable[columnIndex + 1][rowIndex - 1] === 1 &&
+            newWholeTable[columnIndex + 2][rowIndex - 2] === 1 &&
+            newWholeTable[columnIndex + 3][rowIndex - 3] === 1
+          ) {
+            setWinner(1);
+            setTableDisplay("none");
+            setPlayerOneScore(playerOneScore + 1);
+
+            //set the peices 
+            newWholeTable[columnIndex][rowIndex] = 3;
+            newWholeTable[columnIndex + 1][rowIndex - 1] = 3;
+            newWholeTable[columnIndex + 2][rowIndex - 2] = 3;
+            newWholeTable[columnIndex + 3][rowIndex - 3] = 3;
+            setWholeTable(newWholeTable);
           }
         }
       }
+
+      for (let columnIndex = 0; columnIndex < newWholeTable.length; columnIndex++) {
+        for (let rowIndex = 0; rowIndex < newWholeTable[columnIndex].length; rowIndex++) {
+          // Check diagonals starting from the current position
+
+          // Check diagonal to the right and down
+          if (
+            columnIndex + 3 < newWholeTable.length &&
+            rowIndex + 3 < newWholeTable[columnIndex].length &&
+            newWholeTable[columnIndex][rowIndex] === 2 &&
+            newWholeTable[columnIndex + 1][rowIndex + 1] === 2 &&
+            newWholeTable[columnIndex + 2][rowIndex + 2] === 2 &&
+            newWholeTable[columnIndex + 3][rowIndex + 3] === 2
+          ) {
+            setWinner(2);
+            setTableDisplay("none");
+            setPlayerTwoScore(playerTwoScore + 1);
+
+            //set the peices 
+            newWholeTable[columnIndex][rowIndex] = 4;
+            newWholeTable[columnIndex + 1][rowIndex + 1] = 4;
+            newWholeTable[columnIndex + 2][rowIndex + 2] = 4;
+            newWholeTable[columnIndex + 3][rowIndex + 3] = 4;
+            setWholeTable(newWholeTable);
+          }
+
+          // Check diagonal to the right and up
+          if (
+            columnIndex + 3 < newWholeTable.length &&
+            rowIndex - 3 >= 0 &&
+            newWholeTable[columnIndex][rowIndex] === 2 &&
+            newWholeTable[columnIndex + 1][rowIndex - 1] === 2 &&
+            newWholeTable[columnIndex + 2][rowIndex - 2] === 2 &&
+            newWholeTable[columnIndex + 3][rowIndex - 3] === 2
+          ) {
+            setWinner(2);
+            setTableDisplay("none");
+            setPlayerTwoScore(playerTwoScore + 1);
+
+            //set the peices 
+            newWholeTable[columnIndex][rowIndex] = 4;
+            newWholeTable[columnIndex + 1][rowIndex - 1] = 4;
+            newWholeTable[columnIndex + 2][rowIndex - 2] = 4;
+            newWholeTable[columnIndex + 3][rowIndex - 3] = 4;
+            setWholeTable(newWholeTable);
+          }
+        }
+      }
+
   
       if (whosTurnIsIt === "red") {
         setWhosTurnItIs("yellow"); 
