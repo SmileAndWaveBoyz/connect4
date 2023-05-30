@@ -456,7 +456,7 @@ function Player() {
         <div className="markerImageContainer">
           <img className={"markerImage " + whosTurnIsIt} src="/assets/images/marker-red.svg" alt="marker" style= {{left: markerX}}/>
         </div>
-        <table className='invisibleEventListener noSelect' style={{display: tableDisplay}}>
+        <table className='invisibleEventListener' style={{display: tableDisplay}}>
             <tr>
               <td onClick={() => {
                 addToken(0);
