@@ -102,28 +102,20 @@
            filter="url(#filter-2)"
            xlink:href="#path-1"
            id="use18" />
+        <ellipse
+                style="fill:#ffffff;stroke-width:1.21778"
+                cx="20"
+                cy="20"
+                rx="10"
+                ry="10" />
+        <ellipse
+                style="fill:#FFCE67;fill-opacity:1"
+                cx="20"
+                cy="20"
+                rx="4.5"
+                ry="4.5" />
       </g>
     </g>
   </g>
-  <ellipse
-     style="fill:#ffffff"
-     id="path235"
-     cx="20.865271"
-     cy="20.7505"
-     rx="8.5618763"
-     ry="7.9880238" />
-  <ellipse
-     style="fill:#ffce67;fill-opacity:1"
-     id="path652"
-     cx="20.543913"
-     cy="20.727545"
-     rx="3.787425"
-     ry="3.9251497" />
-  <ellipse
-     style="fill:#ffce67;fill-opacity:1"
-     id="path654"
-     cx="21.622755"
-     cy="21.37026"
-     rx="0.50499004"
-     ry="1.1247505" />
+
 </svg>
