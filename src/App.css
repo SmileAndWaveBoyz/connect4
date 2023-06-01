@@ -347,20 +347,37 @@ h2{
   top: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.5s;
+
 }
+
+.token.win{
+  height: 41px;
+  width: 46px;
+  left: 51%;
+  top: 46%;
+}
+
+#whiteRingLarge{
+  stroke-dasharray: 100; 
+  stroke-dashoffset: 0;
+  transition: all ease-in 0.3s;
+  animation-name: ring;
+  animation-duration: 2s;
+}
+
+@keyframes ring {
+  0%   {stroke-dashoffset: 100;}
+  100% {stroke-dashoffset: 0;}
+}
+
 
 .token.red{
   content: url("/public/assets/images/counter-red-small.svg");
 }
-.token.red.win{
-  content: url("/public/assets/images/counter-red-small-win.svg");
-}
+
 
 .token.yellow{
   content: url("/public/assets/images/counter-yellow-small.svg");
-}
-.token.yellow.win{
-  content: url("/public/assets/images/counter-yellow-small-win.svg");
 }
 
 .invisibleEventListener.fallingTokenTable{
@@ -488,18 +505,20 @@ footer{
     z-index: 0;
   }
 
+  .token.win{
+    width: 70px;
+    height: 75px;
+    left: 50%;
+    top: 50%;
+  }
+
+
   .token.red{
     content: url("/public/assets/images/counter-red-large.svg");
-  }
-  .token.red.win{
-    content: url("/public/assets/images/counter-red-large-win.svg");
   }
 
   .token.yellow{
     content: url("/public/assets/images/counter-yellow-large.svg");
-  }
-  .token.yellow.win{
-    content: url("/public/assets/images/counter-yellow-large-win.svg");
   }
 
 }
