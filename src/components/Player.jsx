@@ -311,16 +311,16 @@ function Player() {
 
       <div className="pauseMenu" style={{display: display}}>
         <h2>PAUSE</h2>
-        <button onClick={() => setDisplay("none")}>CONTINUE GAME</button>
-        <button onClick={restartGame}>RESTART</button>
-        <NavLink className= "pauseQuitButton" to="/">QUIT GAME</NavLink>
+        <button className='noSelect' onClick={() => setDisplay("none")}>CONTINUE GAME</button>
+        <button className='noSelect' onClick={restartGame}>RESTART</button>
+        <NavLink className= "pauseQuitButton noSelect " to="/">QUIT GAME</NavLink>
       </div>
       <div className="overlay" style={{display: display}}></div>
 
       <div className="playButtonsContainer">
-          <button className='gameButton' onClick={() => setDisplay("flex")}>MENU</button>
+          <button className='gameButton menuButton noSelect' onClick={() => setDisplay("flex")}>MENU</button>
           <img className="playScreenLogo" src="./assets/images/logo.svg" alt="logo"/>
-          <button className='gameButton' onClick={restartGame}>RESTART</button>
+          <button className='gameButton restartButton noSelect' onClick={restartGame}>RESTART</button>
       </div>
       <div className="playersBox">
         <div className="playersTextBubble">
@@ -576,13 +576,13 @@ function Player() {
         <div className={"playerTurnBox winner"}>
           <h3>PLAYER 1</h3>
           <p>WINS</p>
-          <button className='playAgainButton' onClick={playAgain}>PLAY AGAIN</button>
+          <button className='playAgainButton noSelect' onClick={playAgain}>PLAY AGAIN</button>
         </div>
         :
         <div className={"playerTurnBox winner"}>
           <h3>PLAYER 2</h3>
           <p>WINS</p>
-          <button className='playAgainButton' onClick={playAgain}>PLAY AGAIN</button>
+          <button className='playAgainButton noSelect' onClick={playAgain}>PLAY AGAIN</button>
         </div>
         }
       </div>
