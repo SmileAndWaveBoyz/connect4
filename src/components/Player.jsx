@@ -1,6 +1,8 @@
 import React, { useState, useEffect} from 'react'
 import {Route, Routes, useLocation, NavLink } from 'react-router-dom';
 
+let yayNumber = Math.floor(Math.random() * 8); // random number between 0 and 7
+
 function Player() {
   //Table logic
   const[column0, setcolumn0] = useState([0, 0, 0, 0, 0, 0]);
@@ -63,6 +65,7 @@ function Player() {
               if (newWholeTable[columnNumber][i + 2] === 1) {
                 if (newWholeTable[columnNumber][i + 3] === 1) {
                   setWinner(1);
+                  yaySound();
                   setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
 
@@ -80,6 +83,7 @@ function Player() {
               if (newWholeTable[columnNumber][i + 2] === 2) {
                 if (newWholeTable[columnNumber][i + 3] === 2) {
                   setWinner(2);
+                  yaySound();
                   setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1);
 
@@ -109,6 +113,7 @@ function Player() {
               if (rows[rowNumber][i + 2] === 1) {
                 if (rows[rowNumber][i + 3] === 1) {
                   setWinner(1);
+                  yaySound();
                   setTableDisplay("none");
                   setPlayerOneScore(playerOneScore + 1)
                   
@@ -126,6 +131,7 @@ function Player() {
               if (rows[rowNumber][i + 2] === 2) {
                 if (rows[rowNumber][i + 3] === 2) {
                   setWinner(2);
+                  yaySound();
                   setTableDisplay("none");
                   setPlayerTwoScore(playerTwoScore + 1)
 
@@ -158,6 +164,7 @@ function Player() {
             newWholeTable[columnIndex + 3][rowIndex + 3] === 1
           ) {
             setWinner(1);
+            yaySound();
             setTableDisplay("none");
             setPlayerOneScore(playerOneScore + 1)
 
@@ -179,6 +186,7 @@ function Player() {
             newWholeTable[columnIndex + 3][rowIndex - 3] === 1
           ) {
             setWinner(1);
+            yaySound();
             setTableDisplay("none");
             setPlayerOneScore(playerOneScore + 1);
 
@@ -303,6 +311,20 @@ function Player() {
 
     const fallTimeinMSeconds = fallTime * 1000;
     setTimeout(() => {newFallingTokenOpacity[column] = 0; setFallingTokenOpacity(newFallingTokenOpacity); setColumnFloor("0%");},fallTimeinMSeconds);
+  }
+
+  
+  //Yay sound
+  function yaySound() {
+    const yaySoundPaths = ['./assets/Sounds/Yay1.mp3', './assets/Sounds/Yay2.mp3', './assets/Sounds/Yay3.mp3', './assets/Sounds/Yay4.mp3', './assets/Sounds/Yay5.mp3', './assets/Sounds/Yay6.mp3', './assets/Sounds/Yay7.mp3', './assets/Sounds/Yay8.mp3'];
+    var audio = new Audio(yaySoundPaths[yayNumber]);
+    if (yayNumber === 7) {
+      yayNumber = 0;
+    } else{
+      yayNumber++;
+    }
+    audio.play();
+    console.log(yayNumber);
   }
 
   return (
