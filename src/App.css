@@ -60,15 +60,6 @@ body{
   position: relative;
 }
 
-@supports (-webkit-touch-callout:none){
- .mainMenuButtons{  
-    outline: none;
-  }
-
-  .rulesTickButton:hover{
-    outline: none;
-  }
-}
 
 .mainMenuButtons.playerVsPlayer{
   background-color: var(--player2);
@@ -734,4 +725,12 @@ footer{
     height: 100vh;
     background-color: rgb(0, 0, 0, 0.3);
   }
+}
+
+@supports (-webkit-touch-callout:none){
+  /* IOS */
+ .mainMenuButtons, .pauseMenu, .rulesTickButton:hover, .pauseMenu button, .pauseMenu a{  
+    outline: none;
+  }
+  /* This is because on IOS the outlines annoyingly show up as rectangles, so i've turned them off.  */
 }
