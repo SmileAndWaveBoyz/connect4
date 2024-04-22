@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+    
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/2player' element={<Player/>}/>
